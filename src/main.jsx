@@ -9,12 +9,11 @@ const router = createBrowserRouter([
   {
     path:'/',
     element:<App></App>,
-    children:[
-      {
-        path:'/',
-        element:<Card></Card>
-      }
-    ]
+  },
+  {
+    path:'/card',
+    element:<Card></Card>,
+    loader: ()=> fetch('http://localhost:5000/users')
   }
 ])
 
